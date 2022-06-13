@@ -1,5 +1,6 @@
 from tkinter import *
 import settings
+import utils
 
 root = Tk()
 
@@ -12,7 +13,7 @@ root.resizable(False, False)
 top_frame = Frame(root,
                   bg="black",  # Change later
                   width=1440,
-                  height=180)
+                  height=utils.height_pct(25))
 
 top_frame.place(x=0, y=0)  # Set starting point according to pixels
 
@@ -22,7 +23,7 @@ left_frame = Frame(root,
                    height=540
                    )
 
-left_frame.place(x=0, y=0)
+left_frame.place(x=0, y=180)
 
 # Run the window
 root.mainloop()  # Open until x is clicked
