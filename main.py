@@ -1,4 +1,5 @@
 from tkinter import *
+from cell import Cell
 import settings
 import utils
 
@@ -31,7 +32,15 @@ center_frame = Frame(root,
                      height=utils.height_pct(75)
                      )
 
-center_frame.place(x=utils.width_pct(25), y=utils.height_pct(25))
+center_frame.place(
+    x=utils.width_pct(25),
+    y=utils.height_pct(25))
+
+for x in range(settings.GRID_SIZE):
+    for y in range(settings.GRID_SIZE):
+        c1 = Cell()
+        c1.create_btn_object(center_frame)
+        c1.cell_btn_object.grid(column=x, row=y)
 
 # Run the window
 root.mainloop()  # Open until x is clicked
