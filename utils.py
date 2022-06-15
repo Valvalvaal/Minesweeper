@@ -9,3 +9,11 @@ def height_pct(percentage):
 
 def width_pct(percentage):
     return (settings.WIDTH / 100) * percentage
+
+
+def select_difficulty():
+    """
+    TODO #2 Implement function to select a predetermined
+    difficulty level or a custom one.
+    """
+    pass
