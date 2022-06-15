@@ -21,8 +21,7 @@ class Cell:
         btn = Button(
             location,
             width=12,
-            height=4,
-            text=f'{self.x}, {self.y}'
+            height=4
         )
 
         # Assign an event to a button with bind method
@@ -32,7 +31,11 @@ class Cell:
         self.cell_btn_object = btn
 
     def left_click_actions(self, event):
-        print('I am left clicked!')
+        if self.is_mine:
+            self.show_mine()
+
+    def show_mine(self):
+        pass
 
     def right_click_actions(self, event):
         print('I am right clicked!')
@@ -41,7 +44,6 @@ class Cell:
     # Doesn't belong to each instance, belongs globally to the class
     def randomize_mines():
         # Randomly pick values to be mines
-        # TODO #3 define a function to set mine number
         mines_cells = random.sample(Cell.all, 10)
 
         for picked_cell in mines_cells:
